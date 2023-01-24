@@ -1,10 +1,12 @@
 import React from "react";
-import testImage from "../assets/test.jpg";
 
-const Image = () => {
+const Image = ({ id, farm, server, secret, title }) => {
   return (
     <li className="mr-12 mb-4 w-44">
-      <img src={testImage} alt="test" />
+      <img
+        src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_m.jpg`}
+        alt={title}
+      />
     </li>
   );
 };
