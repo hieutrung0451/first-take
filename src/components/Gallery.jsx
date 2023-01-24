@@ -13,6 +13,14 @@ const Gallery = () => {
         <Image />
         <Image />
         <Image />
+        <Image />
+        <Image />
+        <Image />
+        <Image />
+        <Image />
+        <Image />
+        <Image />
+        <Image />
       </ul>
     </div>
   );

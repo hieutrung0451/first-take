@@ -12,7 +12,9 @@ const App = () => {
         <MainNav />
       </div>
       <div>
-        <h2 className="text-3xl text-center font-bold mb-12">Pictures</h2>
+        <h2 className="text-3xl text-center font-bold mb-12">
+          Mountain Pictures
+        </h2>
         <Gallery />
       </div>
     </div>
