@@ -1,23 +1,13 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import FlickrContext from "../context/FlickrContext";
 import Image from "./Image";
 
 const Gallery = () => {
-  const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { images, loading, fetchImages } = useContext(FlickrContext);
 
   useEffect(() => {
     fetchImages();
   }, []);
-
-  const fetchImages = async () => {
-    const response = await fetch(`${import.meta.env.VITE_APP_URL}`);
-
-    const data = await response.json();
-
-    setImages(data.photos.photo);
-    setLoading(false);
-  };
 
   return (
     <div className="h-full">

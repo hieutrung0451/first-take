@@ -3,9 +3,11 @@ import SearchForm from "./components/SearchForm";
 import MainNav from "./components/MainNav";
 import Gallery from "./components/Gallery";
 
+import { FlickrProvider } from "./context/FlickrContext";
+
 const App = () => {
   return (
-    <div>
+    <FlickrProvider>
       <span id="forkongithub">
         <a href="https://github.com/hieutrung0451/first-take">
           Fork me on GitHub
@@ -24,7 +26,7 @@ const App = () => {
           <Gallery />
         </div>
       </div>
-    </div>
+    </FlickrProvider>
   );
 };
 
