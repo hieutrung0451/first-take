@@ -17,8 +17,23 @@ export const FlickrProvider = ({ children }) => {
     setLoading(false);
   };
 
+  const searchImages = async (text) => {
+    const params = new URLSearchParams({
+      q: text,
+    });
+
+    const response = await fetch(
+      `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=25dfa20beee1b18fe04a59d8fa6a4fb5&tags=${params}&per_page=24&format=json&nojsoncallback=1`
+    );
+
+    const items = await response.json();
+    setImages(items.photos.photo);
+  };
+
   return (
-    <FlickrContext.Provider value={{ images, loading, fetchImages }}>
+    <FlickrContext.Provider
+      value={{ images, loading, fetchImages, searchImages }}
+    >
       {children}
     </FlickrContext.Provider>
   );
