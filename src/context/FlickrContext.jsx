@@ -26,6 +26,10 @@ export const FlickrProvider = ({ children }) => {
     setImages(items.photos.photo);
   };
 
+  const searchParamsImages = async (text) => {
+    
+  }
+
   return (
     <FlickrContext.Provider
       value={{ images, loading, fetchImages, searchImages }}

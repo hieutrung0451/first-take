@@ -7,7 +7,12 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (text === "") {
+      alert("Please write something");
+    }
     searchImages(text);
+    setText("");
   };
 
   return (
@@ -16,6 +21,7 @@ const SearchForm = () => {
         className="py-2 px-2 w-96 rounded-md border-2 border-zinc-500 outline-none"
         type="text"
         name="search"
+        value={text}
         placeholder="Search..."
         onChange={(e) => setText(e.target.value)}
       />
